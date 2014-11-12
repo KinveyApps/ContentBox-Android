@@ -40,7 +40,6 @@ import java.util.Map;
 public class ContentTypePager extends ContentFragment {
 
     private ViewPager pager;
-    //private ContentTypeAdapter adapter;
     private TitlePageIndicator indicator;
 
     private static final int STATIC = 2;//reorder, recent
@@ -51,10 +50,7 @@ public class ContentTypePager extends ContentFragment {
     public void onResume(){
         super.onResume();
         Log.i(Contentviewr.TAG, "pager got onresume");
-        //setAdapter();
-        //pager.setCurrentItem(1);
         pager.getAdapter().notifyDataSetChanged();
-        //pager.getAdapter()./
     }
 
     @Override
@@ -85,10 +81,7 @@ public class ContentTypePager extends ContentFragment {
 
     private void setAdapter(){
 
-//        if (adapter != null){
-//            return;
-//        }
-     //   adapter = new ContentTypeAdapter(getChildFragmentManager());
+
 
         if (pager.getAdapter() == null){
             pager.setAdapter(new ContentTypeAdapter(getChildFragmentManager()));
@@ -97,8 +90,8 @@ public class ContentTypePager extends ContentFragment {
         pager.setOffscreenPageLimit(5);
         indicator.setViewPager(pager);
         indicator.setFooterIndicatorStyle(TitlePageIndicator.IndicatorStyle.Triangle);
-        indicator.setTextColor(R.color.ebony);
-        indicator.setSelectedColor(R.color.ghost_white);
+        indicator.setTextColor(getResources().getColor(R.color.ebony));
+        indicator.setSelectedColor(getResources().getColor(R.color.kinvey_orange));
     }
 
     @Override
@@ -190,9 +183,6 @@ public class ContentTypePager extends ContentFragment {
                 List<String> order = (List<String>) getClient().user().get("ordering");
                 f = ContentListFragment.newInstance(getContentType().get(order.get(position - STATIC)));
             }
-
-
-            //ContentFragment f = ContentListFragment.newInstance(getContentType().get(order.get(position - STATIC)));
 
             mItems.put(id, f);
 

@@ -117,7 +117,6 @@ public class LoginFragment extends ContentFragment implements View.OnClickListen
                     return;
                 }
                 Toast.makeText(getSherlockActivity(), "Couldn't login: " + error.getMessage(), Toast.LENGTH_SHORT).show();
-                //To change body of implemented methods use File | Settings | File Templates.
             }
         });
 
@@ -130,7 +129,6 @@ public class LoginFragment extends ContentFragment implements View.OnClickListen
                 if (getSherlockActivity() == null){
                     return;
                 }
-                //To change body of implemented methods use File | Settings | File Templates.
             }
 
             @Override
@@ -138,7 +136,6 @@ public class LoginFragment extends ContentFragment implements View.OnClickListen
                 if (getSherlockActivity() == null){
                     return;
                 }
-                //To change body of implemented methods use File | Settings | File Templates.
             }
         });
 

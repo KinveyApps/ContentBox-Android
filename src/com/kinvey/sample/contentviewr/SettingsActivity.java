@@ -46,9 +46,6 @@ public class SettingsActivity extends SherlockFragmentActivity {
         super.onCreate(savedInstance);
         setContentView(R.layout.contentviewr);
 
-        //loading = (RelativeLayout) findViewById(R.id.content_loadingbox);
-
-
         getActionBar().setDisplayHomeAsUpEnabled(true);
 
         String type = "";
@@ -76,24 +73,16 @@ public class SettingsActivity extends SherlockFragmentActivity {
                     }
                 });
 
-//                if ()
-               // getClient().enableDebugLogging();
-
-//            }
-//
             }
-            //else{
+			Log.i("Settings", "ok it's not nulll");
+			if (!((ContentViewrApplication) getApplication()).getClient().user().isUserLoggedIn()) {
+				Log.i("Settings", "ok it's showing login");
+				replaceFragment(new LoginFragment(), false);
+			} else {
+				Log.i("Settings", "ok it's logged in");
 
-                Log.i("Settings", "ok it's not nulll");
-                if (!((ContentViewrApplication) getApplication()).getClient().user().isUserLoggedIn()){
-                    Log.i("Settings", "ok it's showing login");
-                    replaceFragment(new LoginFragment(), false);
-                }else{
-                    Log.i("Settings", "ok it's logged in");
-
-                    showContent();
-                }
-            //}
+				showContent();
+			}
         }
     }
 
@@ -109,7 +98,6 @@ public class SettingsActivity extends SherlockFragmentActivity {
             if (!isFinishing()){
                 tr.commitAllowingStateLoss();
             }
-            //tr.commitAllowingStateLoss();
         }
 
     public void showContent(){

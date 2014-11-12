@@ -36,8 +36,6 @@ public class ContentViewrApplication extends Application {
 
     public void loadClient(KinveyUserCallback callback){
         if (client == null){
-            Log.i("Settings", "ok it's a new client");
-
             client = new Client.Builder(getApplicationContext()).setRetrieveUserCallback(callback).setUserClass(ContentUser.class).build();
             client.enableDebugLogging();
         }else{

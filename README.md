@@ -24,7 +24,7 @@ In particular this sample application highlights the following key backend tasks
 11. Specify your app.key and app.secret in the property file located at `assets/kinvey.properties` 
 12. Visit [The Kivey Console](www.console.kinvey.com), and create three collections within the `Data` section named `Content`, `ContentTypes`, and `Markets`.
 13. When viewing the databrowser for each of these collections, click __Settings__ -> __import__, and select the respective *.json file from the `assets/` directory.
-
+14.  Within the console, visit the __Users__ section, and click __Add User__.  Give the test user a username and a apssword, which you can use to log into the application.  
 
 ##License
 

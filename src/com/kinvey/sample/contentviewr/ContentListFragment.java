@@ -15,6 +15,10 @@ package com.kinvey.sample.contentviewr;
 
 import static com.kinvey.sample.contentviewr.Contentviewr.CONTENT_COLLECTION;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 import android.app.Activity;
 import android.os.Bundle;
 import android.util.Log;
@@ -25,10 +29,8 @@ import android.widget.AdapterView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
-import com.actionbarsherlock.view.Menu;
-import com.actionbarsherlock.view.MenuInflater;
+
 import com.kinvey.android.AsyncAppData;
-import com.kinvey.android.Client;
 import com.kinvey.android.callback.KinveyListCallback;
 import com.kinvey.android.offline.SqlLiteOfflineStore;
 import com.kinvey.java.Query;
@@ -36,12 +38,8 @@ import com.kinvey.java.offline.OfflinePolicy;
 import com.kinvey.sample.contentviewr.core.ContentFragment;
 import com.kinvey.sample.contentviewr.model.ContentItem;
 import com.kinvey.sample.contentviewr.model.ContentType;
-import com.kinvey.sample.contentviewr.windows.ImageViewer;
 import com.kinvey.sample.contentviewr.windows.Viewer;
 import com.kinvey.sample.contentviewr.windows.WindowFactory;
-
-import java.util.Arrays;
-import java.util.List;
 
 /**
  * @author edwardf
@@ -132,7 +130,11 @@ public class ContentListFragment extends ContentFragment implements AdapterView.
                     return;
                 }
                 loading.setVisibility(View.GONE);
-                content = Arrays.asList(result);
+                if (result != null){
+                	content = Arrays.asList(result);
+                }else{
+                	content = new ArrayList<ContentItem>();
+                }
 
                 if (content.size() == 0){
                     empty.setVisibility(View.VISIBLE);

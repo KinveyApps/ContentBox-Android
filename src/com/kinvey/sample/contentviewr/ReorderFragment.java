@@ -148,10 +148,6 @@ public class ReorderFragment extends ContentFragment {
             }
             holder = (FilterViewHolder) convertView.getTag();
 
-//            if (!rowData.isLabel() && !rowData.isSetting()){
-//                holder.getDrag().setVisibility(View.GONE);
-//            }
-
             name = holder.getName();
             subtext = holder.getSubtext();
 

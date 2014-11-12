@@ -100,9 +100,6 @@ public class Contentviewr extends SherlockFragmentActivity{
                 contentTypes.put(contentKeys[i], contentValues[i]);
             }
 
-            //saved.putStringArray("contentKeys", contentKeys);
-            //saved.putStringArray("contentValues", contentValues);
-
         }
 
         fullContent = (FrameLayout) findViewById(R.id.content_full);
@@ -138,19 +135,6 @@ public class Contentviewr extends SherlockFragmentActivity{
         // Set the drawer toggle as the DrawerListener
         drawerLayout.setDrawerListener(drawerToggle);
 
-
-//        ((ContentViewrApplication)getApplication()).loadClient(new KinveyUserCallback() {
-//            @Override
-//            public void onSuccess(User result) {
-//                preload();
-//            }
-//
-//            @Override
-//            public void onFailure(Throwable error) {
-//                showLogin();
-//            }
-//        });
-//        getClient().enableDebugLogging();
 
         if (getClient() == null || getClient().user() == null){
             showLogin();
@@ -218,10 +202,6 @@ public class Contentviewr extends SherlockFragmentActivity{
 
     private void preload(){
 
-        //if (!getClient().push().isPushEnabled()){
-
-//            getClient().push().initialize(getApplication());
-        //}
         preLoadSemaphore = PRELOAD_COUNT;
 
         AsyncAppData<Target> targetAppData = getClient().appData(MARKET_COLLECTION, Target.class);
@@ -244,7 +224,7 @@ public class Contentviewr extends SherlockFragmentActivity{
 
             @Override
             public void onFailure(Throwable error) {
-                Toast.makeText(Contentviewr.this, "Something went wrong -> " + error, Toast.LENGTH_SHORT);
+                Toast.makeText(Contentviewr.this, "Something went wrong -> " + error, Toast.LENGTH_SHORT).show();
                 Log.e(TAG, "something went wrong -> " + error);
                 error.printStackTrace();
             }
