@@ -11,20 +11,16 @@ In particular this sample application highlights the following key backend tasks
 
 
 ## Set up ContentBox Project
-1. Download the [ContentBox](https://github.com/KinveyApps/contentbox-Android/archive/master.zip) project.
+1. Download the [ContentBox](https://github.com/KinveyApps/contentbox-Android/archive/master.zip) project and import it into your IDE.  
 2. Download [ActionBarSherlock](http://actionbarsherlock.com/) and in Eclipse, go `File` -> `New` -> `Android Project from Existing Source` and navigate to the ActionBarSherlock directory, and import it as a library project.
 3. Download [ViewPagerIndicator](http://viewpagerindicator.com/) and in Eclipse, go `File` -> `New` -> `Android Project from Existing Source` and navigate to the ViewPagerIndicator directory, and import it as a library project.
 4. [Download Kinvey's Android Library](http://devcenter.kinvey.com/android/downloads) and get your app-key and app-secret from the Kinvey console, by signing up and then creating a new app.
-5.  In Eclipse, go to __File &rarr; Import…__
-6. Click __Android &rarr; Existing Android Code into Workspace__
-7. __Browse…__ to set __Root Directory__ to the extracted zip from step 1
-8. In the __Projects__ box, make sure the __Activity__ project check box ais selected. Then click __Finish__.
-9. Right click on the newly created project, and select __Properties__, then select __Android__ on the left.  At the bottom of the window, under the __Library__ section add `ActionBarSherlock` and `ViewPagerIndicator` as a dependency. 
-10. Copy and paste the Kinvey Jars downloaded in step 3 into the `libs/` directory of the ContentBox project
-11. Specify your app.key and app.secret in the property file located at `assets/kinvey.properties` 
-12. Visit [The Kinvey Console](www.console.kinvey.com), and create three collections within the __Data__ section named `Content`, `ContentTypes`, and `Markets`.
-13. When viewing the __Data__ browser for each of these collections, click __Settings__ -> __import__, and select the respective *.json file from the `assets/` directory.
-14.  Within the console, visit the __Users__ section, and click __Add User__.  Give the test user a username and a apssword, which you can use to log into the application.  
+5.  Vist out [getting started guide for android](http://devcenter.kinvey.com/android/guides/getting-started) and follow the `Manual Project Set Up` steps to import the library into your IDE.
+6. In Eclipse, right click on the newly created project, and select __Properties__, then select __Android__ on the left.  At the bottom of the window, under the __Library__ section add `ActionBarSherlock` and `ViewPagerIndicator` as a dependency. 
+7. Specify your app.key and app.secret in the property file located at `assets/kinvey.properties` 
+8. Visit [The Kinvey Console](www.console.kinvey.com), and create three collections within the __Data__ section named `Content`, `ContentTypes`, and `Markets`.
+9. When viewing the __Data__ browser for each of these collections, click __Settings__ -> __import__, and select the respective *.json file from the `assets/` directory.
+10.  Within the console, visit the __Users__ section, and click __Add User__.  Give the test user a username and a apssword, which you can use to log into the application.  
 
 ##License
 
