@@ -15,7 +15,10 @@ package com.kinvey.sample.contentviewr;
 
 import android.app.Application;
 import android.util.Log;
+
+import com.kinvey.android.AndroidJson;
 import com.kinvey.android.Client;
+import com.kinvey.android.AndroidJson.JSONPARSER;
 import com.kinvey.android.callback.KinveyUserCallback;
 import com.kinvey.java.User;
 import com.kinvey.sample.contentviewr.model.ContentUser;
