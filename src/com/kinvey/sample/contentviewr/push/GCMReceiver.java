@@ -13,18 +13,23 @@
  */
 package com.kinvey.sample.contentviewr.push;
 
+import android.app.Activity;
+import android.content.ComponentName;
 import android.content.Context;
-import com.google.android.gcm.GCMBroadcastReceiver;
+import android.content.Intent;
+import android.support.v4.content.WakefulBroadcastReceiver;
 
 /**
  * @author edwardf
  */
-public class GCMReceiver extends GCMBroadcastReceiver {
+public class GCMReceiver extends WakefulBroadcastReceiver {
 
 
     @Override
-    public String getGCMIntentServiceClassName(Context context){
-        return "com.kinvey.sample.contentviewr.push.GCMService";
+    public void onReceive(Context context, Intent intent) {
+        ComponentName comp = new ComponentName(context.getPackageName(), com.kinvey.sample.contentviewr.push.GCMService.class.getName());
+        startWakefulService(context, (intent.setComponent(comp)));
+        setResultCode(Activity.RESULT_OK);
     }
 
 }

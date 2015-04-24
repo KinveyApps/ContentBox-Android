@@ -17,6 +17,7 @@ import android.app.NotificationManager;
 import android.content.Context;
 import android.support.v4.app.NotificationCompat;
 import android.util.Log;
+
 import com.kinvey.android.push.KinveyGCMService;
 import com.kinvey.sample.contentviewr.R;
 
@@ -46,7 +47,7 @@ public class GCMService extends KinveyGCMService {
     }
 
     @Override
-    public void onDelete(int deleteCount) {
+    public void onDelete(String deleteCount) {
 
     }
 
@@ -59,4 +60,9 @@ public class GCMService extends KinveyGCMService {
     public void onUnregistered(String oldID) {
 
     }
+
+	@Override
+	public Class getReceiver() {
+		return GCMReceiver.class;
+	}
 }
