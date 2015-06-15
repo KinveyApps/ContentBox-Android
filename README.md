@@ -27,7 +27,7 @@ In particular this sample application highlights the following key backend tasks
 
 
 ###Android Studio
-1. In Android Studio, go to **File $rarr; New %rarr; Import Project**
+1. In Android Studio, go to **File &rarr; New &rarr; Import Project**
 2. **Browse** to the extracted zip from step 1, and click **OK**
 3. Click **Next** and **Finish**.
 4. Repeat Steps 1-3 for ActionBarSherlock, as well as ViewPagerIndicator.
