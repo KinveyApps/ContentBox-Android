@@ -10,7 +10,6 @@ target/
 .gradle/
 build/
 local.properties
-project.properties
 proguard/
 *.log
 .settings/
