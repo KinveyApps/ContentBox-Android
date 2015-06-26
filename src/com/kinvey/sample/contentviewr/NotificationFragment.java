@@ -63,8 +63,8 @@ public class NotificationFragment extends ContentFragment {
             }
         });
 
+    	Log.i(Client.TAG, "Push status -->" + Boolean.toString(client().push().isPushEnabled()));
         if (client().user().containsKey("_messaging")){
-        	Log.i(Client.TAG, "Push status -->" + Boolean.toString(client().push().isPushEnabled()));
             updates.setChecked(true);
         }else{
             updates.setChecked(false);
