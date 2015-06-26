@@ -14,6 +14,7 @@
 package com.kinvey.sample.contentviewr;
 
 import android.graphics.Typeface;
+import android.util.Log;
 import android.view.View;
 import android.widget.*;
 import com.kinvey.android.Client;
@@ -55,16 +56,15 @@ public class NotificationFragment extends ContentFragment {
                     client().push().initialize(getSherlockActivity().getApplication());
                     updates.setChecked(true);
                 }else{
-                    client().user().remove("_push");
+                    client().user().remove("_messaging");
                     updates.setChecked(false);
 
                 }
             }
         });
 
-
-
-        if (client().user().containsKey("_push")){
+        if (client().user().containsKey("_messaging")){
+        	Log.i(Client.TAG, "Push status -->" + Boolean.toString(client().push().isPushEnabled()));
             updates.setChecked(true);
         }else{
             updates.setChecked(false);
